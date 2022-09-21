@@ -1,0 +1,27 @@
+*  @param[in]  node Node to be inserted.
+ */
+void rb_insert(struct rb_node *node)
+{
+    struct rb_node **root = &rb_root;
+
+    while (*root != NULL) {
+        if (node->key < (*root)->key) { /* Go left */
+            root = &(*root)->left;
+        } else if (node->key > (*root)->key){ /* Go right */
+            root = &(*root)->right;
+        } else { /* Duplicate key, do nothing */
+
+            return; // TODO: Should we warn the user that he is trying to insert a duplicate?
+
+        }
+
+    }
+
+    node->parent = NULL;     /* New node has no parent yet. */
+
+    *root = node;           /* Insert new node in tree. */
+
+    rb_insertion_fixup(node);   /* Fix red-black properties after insertion. */
+
+    return ;                /* Return pointer to newly inserted item. */
+}
