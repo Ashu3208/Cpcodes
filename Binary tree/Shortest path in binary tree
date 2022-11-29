@@ -1,0 +1,25 @@
+// Consider an infinite full binary tree (each node has two children except the leaf nodes) defined as follows. 
+//For a node labelled v its left child will be labelled 2*v and its right child will be labelled 2*v+1. The root is labelled as 1.
+//You are given N queries of the form i j. For each query, you have to print the length of the shortest path between node labelled i and node labelled j.
+
+       int i,j;
+	    cin>>i>>j;
+	    vector<int>pu,pb;  // pu and pb are i and j in binary number. length of pu and pb are the path from root to u and v.
+      // 1 at a particular position means that node is in the right subtree and 0 means in the left subtree.
+	    while(i>0){
+	        pu.push_back(i%2);
+	        i/=2;
+	    }
+	    while(j>0){
+	        pb.push_back(j%2);
+	        j/=2;
+	    }
+	    int u=pu.size(),l=pb.size(),k=0;
+	    reverse(pu.begin(),pu.end());
+	    reverse(pb.begin(),pb.end());
+      // reversing to get actual binary representation of u and v
+	    for(int r=0;r<pu.size()&&r<pb.size();r++){
+	        if(pu[r]==pb[r])k++;
+	        else break;
+	    }
+	    cout<<u+l-2*k<<endl;
