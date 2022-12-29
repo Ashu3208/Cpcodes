@@ -1,3 +1,2 @@
 # Mycodes
-Practice codes
-This repository contains codes which may be helpful in coding 
+This repository contains codes for various cp problems.
