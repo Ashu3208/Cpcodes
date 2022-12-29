@@ -1,0 +1,29 @@
+// String Compression
+//Question Link:https://leetcode.com/problems/string-compression/description/
+
+class Solution {
+public:
+    int compress(vector<char>& c) {
+        int n=c.size();
+    int i=0;
+    int k=0;
+
+    while(i<n){
+        int j=i;
+        while(j<n and c[j]==c[i]) j++;
+
+
+        c[k]=c[i];
+        k++;
+        if(j-i>1){
+            for(char x:to_string(j-i)){
+                c[k]=x;
+                k++;
+            }
+        }
+        i=j;
+    }
+    return k;
+
+    }
+};
