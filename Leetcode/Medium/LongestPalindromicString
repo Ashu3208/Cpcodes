@@ -1,0 +1,35 @@
+/**
+Given a string s, return the longest palindromic substring in s.
+Question Link:https://leetcode.com/problems/longest-palindromic-substring/description/
+**/
+class Solution {
+public:
+    string longestPalindrome(string s) {
+      int mx=0,left=-1,right=-1;
+      for(int i=0;i<s.length();i++){
+          //odd length
+          int l=i,r=i;
+          while(l>=0&&r<s.length()&&s[l]==s[r]){
+              if(r-l+1>mx){
+                  mx=r-l+1;
+                  left=l;right=r;
+              }
+              l--;
+              r++;
+          }
+          //even length
+          l=i;r=i+1;
+           while(l>=0&&r<s.length()&&s[l]==s[r]){
+              if(r-l+1>mx){
+                  mx=r-l+1;
+                  left=l;right=r;
+              }
+              l--;
+              r++;
+          }
+      }
+      string ans="";
+      for(int i=left;i<=right;i++)ans+=s[i];
+      return ans;
+    }
+};
