@@ -1,0 +1,19 @@
+/**
+Given the head of a singly linked list, reverse the list, and return the reversed list.
+Question Link:https://leetcode.com/problems/reverse-linked-list/description/
+**/
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(head==NULL||head->next==NULL)return head;
+        ListNode* p=NULL;
+        ListNode *q=head;
+       ListNode *r=q->next;
+       while(r){
+           q->next=p;
+           p=q;q=r;r=r->next;
+       }
+       q->next=p;
+        return q;
+    }
+};
