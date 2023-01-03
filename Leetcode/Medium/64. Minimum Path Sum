@@ -1,0 +1,34 @@
+/**
+Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
+
+Note: You can only move either down or right at any point in time.
+Question Link: https://leetcode.com/problems/minimum-path-sum/description/
+**/
+class Solution {
+  public: int cost(vector < vector < int >> & grid, int i, int j, vector < vector < int >> & lookup) {
+    int n = grid.size(), m = grid[0].size();
+    if (lookup[i][j] != -1)
+      return lookup[i][j];
+    if (i == n - 1 && j == m - 1) return grid[i][j];
+    else if (i == n - 1) {
+      lookup[i][j] = grid[i][j] + cost(grid, i, j + 1, lookup);
+      return lookup[i][j];
+
+    } else if (j == m - 1) {
+
+      lookup[i][j] = grid[i][j] + cost(grid, i + 1, j, lookup);
+      return lookup[i][j];
+    } else {
+      lookup[i][j] = grid[i][j] + min(cost(grid, i, j + 1, lookup), cost(grid, i + 1, j, lookup));
+      return lookup[i][j];
+
+    }
+
+  }
+  int minPathSum(vector < vector < int >> & grid) {
+    int n = grid.size(), m = grid[0].size();
+    vector < vector < int >> lookup(n, vector < int > (m, -1));
+    return cost(grid, 0, 0, lookup);
+
+  }
+};
