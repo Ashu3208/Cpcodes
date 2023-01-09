@@ -1,0 +1,38 @@
+/**
+Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+Question Link:https://leetcode.com/problems/find-all-anagrams-in-a-string/description/?envType=study-plan&id=level-1
+**/
+
+class Solution {
+public:
+    vector<int> findAnagrams(string s, string p) {
+       vector<int>ans;
+       vector<int>hash(26,0);
+       vector<int>phash(26,0);
+       int len=s.size();
+       int window=p.size();
+       if(len<window)
+            return ans;
+       int left=0,right=0;
+       while(right<window){
+           phash[p[right]-'a']++;
+           hash[s[right++]-'a']++;
+       }
+       right-=1;
+       while(right<len){
+           if(phash==hash){
+               ans.push_back(left);
+           }
+           right+=1;
+           if(right!=len){
+               hash[s[right]-'a']++;
+           }
+            hash[s[left]-'a']--;
+            left++;
+       } 
+       return ans;
+    }
+};
