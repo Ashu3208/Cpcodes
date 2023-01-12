@@ -1,0 +1,47 @@
+/**
+Given an array of strings words and an integer k, return the k most frequent strings.
+
+Return the answer sorted by the frequency from highest to lowest. Sort the words with the same frequency by their lexicographical order.
+Question Link:https://leetcode.com/problems/top-k-frequent-words/description/?envType=study-plan&id=level-1
+**/
+
+
+class Solution {
+public:
+static bool sortByVal(const pair<string, int> &a, const pair<string, int> &b) 
+{
+    if(a.second==b.second)
+        return a.first<b.first;
+    return (a.second > b.second); 
+} 
+static bool comp(string &a,string &b){
+    return a<b;
+}
+
+    vector<string> topKFrequent(vector<string>& words, int k) {
+        map<string,int> m;
+        for(int i=0;i<words.size();i++){
+            if(m.find(words[i])==m.end())m[words[i]]=1;
+            else m[words[i]]++;
+        }
+       vector<pair<string, int>> vec;
+
+	// copy key-value pairs from the map to the vector
+  map<string, int> :: iterator it2;
+  for (auto i:m) 
+  {
+      
+    vec.push_back(make_pair(i.first, i.second));
+  }
+
+	// // sort the vector by increasing order of its pair's second value
+  sort(vec.begin(), vec.end(), sortByVal); 
+    vector<string>ans;
+    for(int i=0;i<k;i++){
+      ans.push_back(vec[i].first);
+    }
+    
+       return ans;     
+            
+    }
+};
