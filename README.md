@@ -1,3 +1,3 @@
 # Mycodes
-This repository contains codes for various cp problems.
-It contains various solutions of Leetcode problems.
+This repository is intended to have codes for problems that I want to add in my notes.
+The questions are mainly from interviewbit, GFG and Leetcode. 
