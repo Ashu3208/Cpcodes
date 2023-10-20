@@ -1,3 +1,7 @@
-# Mycodes
-This repository is intended to have codes for problems that I want to add in my notes.
-The questions are mainly from interviewbit, GFG and Leetcode. 
+# Compilation of problems from many different sources
+The repository contains solutions to different problems that I encounteres. Problems are from coding platforms like Leetcode, InterviewBit, Codeforces and Codechef.
+
+Problems with Topic Wise Breakdown:
+
+## Graph
+- Minimum Steps by Knight / Knight on Chess Board
