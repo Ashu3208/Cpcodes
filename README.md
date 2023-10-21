@@ -13,3 +13,4 @@ Problems with Topic Wise Breakdown:
 
 ## Misc
 - Large Factorials (for large n)
+- Palindrome (Check whether given number is palindrome)
