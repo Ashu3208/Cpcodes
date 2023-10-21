@@ -1,3 +1,7 @@
+/*
+    A number is said to be palindromic if it reads the same backwards. For eg 101 is palindrome because if you read it backwards, it still is 101. 
+*/
+
 int ispalindrome(int n){
     vector<int>digits;
     while(n>0){
