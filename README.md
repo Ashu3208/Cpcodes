@@ -6,6 +6,7 @@ Problems with Topic Wise Breakdown:
 
 ## Hashing
 - Substring Concatenation ( Asked in Meta)
+- Window Substring ( Asked in Google, Flipkart, Airbnb)
 
 ## Graph
 - Minimum Steps by Knight / Knight on Chess Board
