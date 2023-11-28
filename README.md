@@ -10,6 +10,7 @@ Problems with Topic Wise Breakdown:
 
 ## Graph
 - Minimum Steps by Knight / Knight on Chess Board
+- Prim's Algorithm (Weight of MST)
 
 
 ## Greedy
