@@ -4,10 +4,6 @@ Problem link and description are also in the code files.
 
 Problems with Topic Wise Breakdown:
 
-## Hashing
-- Substring Concatenation ( Asked in Meta)
-- Window Substring ( Asked in Google, Flipkart, Airbnb)
-
 ## Graph
 - Minimum Steps by Knight / Knight on Chess Board
 - Prim's Algorithm (Weight of MST)
@@ -16,7 +12,13 @@ Problems with Topic Wise Breakdown:
 ## Greedy
 - Meeting rooms ( min no of room so that all meeting can be done)
 
-
+## Hashing
+- Substring Concatenation ( Asked in Meta)
+- Window Substring ( Asked in Google, Flipkart, Airbnb)
+  
 ## Misc
 - Large Factorials (for large n)
 - Palindrome (Check whether given number is palindrome)
+
+## Tree
+- Lowest Common Ancestor (in a Binary Tree)
